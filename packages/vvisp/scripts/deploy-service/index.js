@@ -7,6 +7,7 @@ module.exports = async function(options) {
   const { writeState } = require('./utils');
   const DeployState = require('./DeployState');
   const preProcess = require('./preProcess');
+  const { SERVICE_FILE } = require('../../config/Constant');
   const {
     deployBusinesses,
     deployNonUpgradeables,
@@ -116,7 +117,7 @@ module.exports = async function(options) {
             options
           );
           printOrSilent(
-            `You can see result in ${chalk.keyWord('state.haechi.json')}`,
+            `You can see result in ${chalk.keyWord(SERVICE_FILE)}`,
             options
           );
         } else {
